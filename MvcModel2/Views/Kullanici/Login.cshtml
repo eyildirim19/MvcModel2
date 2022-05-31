@@ -1,0 +1,34 @@
+﻿@{
+	Layout = null;
+}
+@model Kullanici
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Login</title>
+</head>
+<body>
+	<form action="/Kullanici/Login" method="post">
+		<!---Form'daki input name ile Model property name eşleşirtse view'dan servera otomatik bind edilir-->
+		<input type="text" name="KullaniciAdi" />
+		<br />
+		<input type="password" name="Sifre" />
+		<br />
+		<input type="submit" value="Giriş Yap" />
+	</form>
+	<br />
+	<br />
+	<br />
+	<form action="/Kullanici/Login" method="post">
+		<!---Form'daki input name ile Model property name eşleşirtse view'dan servera otomatik bind edilir-->
+		<!--asp-for ile modelin propertylerine eriştik...-->
+		<input type="text" asp-for="KullaniciAdi" />
+		<br />
+		<input type="password" asp-for="Sifre"/>
+		<br />
+		<input type="submit" value="Giriş Yap" />
+	</form>
+</body>
+</html>

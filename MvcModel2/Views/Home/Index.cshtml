@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+@model List<Haber>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/haber.js"></script>
+
+    <style>
+        #container {
+            margin: 200px auto 0px auto;
+            width: 500px;
+            height: 30px;
+            border: 1px solid #808080;
+            overflow:hidden;
+            border-radius:5px;
+        }
+
+        .namebox {
+            padding: 5px;
+            height:20px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="haberSlider">
+
+            @foreach (var item in Model)
+            {
+               
+                <div class="namebox">
+                @item.Baslik : @item.KisaAciklama - @item.Tarih.ToShortDateString()
+
+            </div> 
+            }
+
+            <div id="r"></div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
